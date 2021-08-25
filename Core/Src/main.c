@@ -120,6 +120,7 @@ int main(void)
 			 {
 				_testResTab[ctr]=TEST_OK;
 			 }
+			 _testResTab[TEST_NUMBER-1]=TEST_KO;
       		 u8TestRes=TEST_DONE;
       		  break;
       	  }
