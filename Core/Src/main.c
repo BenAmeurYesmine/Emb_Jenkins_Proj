@@ -56,7 +56,6 @@ __IO enum_test_status_TypeDef u8TestRes = TEST_NOT_STARTED;
 /* Private function prototypes -----------------------------------------------*/
 static void SystemClock_Config(void);
 static void EXTI15_10_IRQHandler_Config(void);
-static void CPU_CACHE_Enable(void);
 static void Error_Handler(void);
 /* Private functions ---------------------------------------------------------*/
 static void _initTestTab(uint8_t * tab,uint8_t size)
@@ -275,19 +274,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   }
 }
 
-/**
-* @brief  CPU L1-Cache enable.
-* @param  None
-* @retval None
-*/
-static void CPU_CACHE_Enable(void)
-{
-  /* Enable I-Cache */
-//  SCB_EnableICache();
-//
-//  /* Enable D-Cache */
-//  SCB_EnableDCache();
-}
 
 #ifdef  USE_FULL_ASSERT
 
