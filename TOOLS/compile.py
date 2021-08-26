@@ -13,7 +13,8 @@ os.chdir(path)
 
 os.environ["PATH"]+=os.pathsep + os.pathsep.join(["C:\\dev\\tools\\make-3.81\\bin"])
 os.environ["PATH"]+=os.pathsep + os.pathsep.join(["C:\\dev\\tools\\gcc-arm-none-eabi-10.3-2021.07\\bin"])
-
-os.system("make -j8 all")
+path ="..\\TOOLS\\bin"
+os.chdir(path)
+os.system("make ..\\Debug\\makefile")
 
 

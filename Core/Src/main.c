@@ -292,7 +292,7 @@ void assert_failed(uint8_t *file, uint32_t line)
 
   /* Infinite loop */
   while (1)
-  {
+  { 
   }
 }
 #endif
