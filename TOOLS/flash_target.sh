@@ -17,10 +17,13 @@ then
 			echo "application is started successfully"
 		else
 			echo "application is not started"
+			exit 3;
 		fi
 	else
 		echo "flashing is failed"
+		exit 2;
 	fi
 else
 	echo "erase is failed"
+	exit 1;
 fi
