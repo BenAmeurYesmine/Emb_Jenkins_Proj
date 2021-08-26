@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Debuging') {
             steps {
-                 dir('..\\TOOLS') {
+                 dir('.\\TOOLS') {
                     sh'python compile.py Debug'
                  }
                  echo 'compilation done'
@@ -16,7 +16,7 @@ pipeline {
         
         stage('Flashing') {
             steps {
-               dir('..\\TOOLS') {
+               dir('.\\TOOLS') {
                     sh' ./flash_target.sh '
                 }
                 echo 'Flashing done'
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Bringup') {
             steps {
-               dir('..\\TOOLS') {
+               dir('.\\TOOLS') {
                     sh' ./bringup2.sh '
                 }
                 echo 'Bringup done'
