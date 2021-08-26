@@ -13,6 +13,7 @@ pipeline {
 
                 }
             }
+			
         
         stage('Flashing') {
             steps {
