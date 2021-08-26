@@ -8,7 +8,8 @@ pipeline {
                     sh'python compile.py Debug'
                  }
                  echo 'compilation done'
-                 emailext attachLog: true, body: '', subject: 'build', to: 'mina.benameur@gmail.com'
+               
+				 emailext attachLog: true, body: '', subject: '', to: 'bameuryasmine@gmail.com'
 
 
                 }
