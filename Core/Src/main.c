@@ -69,6 +69,7 @@ static void _initTestTab(uint8_t * tab,uint8_t size)
   * @brief  Main program
   * @param  None
   * @retval None
+  *
   */
 int main(void)
 {
