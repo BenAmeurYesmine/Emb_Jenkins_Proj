@@ -5,7 +5,7 @@ pipeline {
         stage('Debuging') {
             steps {
                  dir('.\\TOOLS') {
-                    sh'python compile.py Debug'
+                    sh'./compile.sh'
                  }
                  echo 'compilation done'
                
@@ -15,15 +15,7 @@ pipeline {
                 }
             }
 			
-		stage('Doxygene') {
-            steps {
-                 dir('.\\TOOLS') {
-                    sh'python doxygen.py'
-                 }
-                 echo 'doxygen files generated'
-                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'TOOLS\\Doxygen\\html', reportFiles: '*.html', reportName: 'HTML Report', reportTitles: ''])
-                }
-            }
+		
         
         stage('Flashing') {
             steps {
@@ -42,6 +34,16 @@ pipeline {
                 echo 'Bringup done'
             }
         }
+		
+		stage('Doxygene') {
+            steps {
+                 dir('.\\TOOLS') {
+                    sh'python doxygen.py'
+                 }
+                 echo 'doxygen files generated'
+                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'TOOLS\\Doxygen\\html', reportFiles: '*.html', reportName: 'HTML Report', reportTitles: ''])
+                }
+            }
 
     }
 }
