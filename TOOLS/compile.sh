@@ -10,7 +10,7 @@ then
    exit 1
 fi
 
-Res=$(cd ${MAKEFILE_DIR} &&  ${MAKE_BIN_DIR}/make.exe clean)s
+Res=$(cd ${MAKEFILE_DIR} &&  ${MAKE_BIN_DIR}/make.exe clean)
 if [ $? -ne 0 ]
 then 
 	echo "can't clean"
