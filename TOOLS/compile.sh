@@ -25,13 +25,13 @@ done
 
 
 #*******************
-Update_Makefile
+Update_Makefile;
 
 Res=$(cd ${MAKEFILE_DIR} &&  ${MAKE_BIN_DIR}/make.exe clean);
 if [ $? -ne 0 ]
 then
 echo "can't clean";
-Undo_Makefile
+Undo_Makefile;
 exit 2;
 fi
 echo "Clean done";
@@ -40,8 +40,8 @@ Res=$(cd ${MAKEFILE_DIR} &&  ${MAKE_BIN_DIR}/make.exe all);
 if [ $? -ne 0 ]
 then
 echo "Can't make makefile";
-Undo_Makefile
+Undo_Makefile;
   exit 3
 fi
 
-Undo_Makefile
+Undo_Makefile;
