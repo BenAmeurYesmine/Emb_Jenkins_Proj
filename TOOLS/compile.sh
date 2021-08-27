@@ -18,19 +18,19 @@ then
 fi
 echo "Clean done"
 
+Res=$(cd ${MAKEFILE_DIR} &&  ${MAKE_BIN_DIR}/make.exe all)
+if [ $? -ne 0 ]
+then 
+	echo "Can't make makefile"
+   exit 3
+fi
+# Res=$(${MAKE_BIN_DIR}/make.exe -C ${MAKEFILE_DIR} )
+echo "$Res"
+
 #recover makefile compiler's path
 sed -i 's/..\/TOOLS\/gcc-arm-none-eabi\/bin\/arm-none-eabi/arm-none-eabi/g' ../Debug/makefile
 if [ $? -ne 0 ]
 then 
 	echo " Can't updated Makefile "
-   exit 3
-fi
-
-Res=$(cd ${MAKEFILE_DIR} &&  ${MAKE_BIN_DIR}/make.exe all)
-if [ $? -ne 0 ]
-then 
-	echo "Can't make makefile"
    exit 4
 fi
-# Res=$(${MAKE_BIN_DIR}/make.exe -C ${MAKEFILE_DIR} )
-echo "$Res"
