@@ -43,5 +43,5 @@ echo "Can't make makefile";
 Undo_Makefile;
   exit 3
 fi
-
+echo $Res
 Undo_Makefile;
