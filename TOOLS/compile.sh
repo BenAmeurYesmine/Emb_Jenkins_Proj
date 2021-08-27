@@ -1,5 +1,5 @@
 #!/bin/bash
-MAKE_BIN_DIR=../TOOLS
+MAKE_BIN_DIR=../TOOLS/make/bin
 MAKEFILE_DIR=../Debug
 
 #update makefile compiler's path
@@ -14,7 +14,8 @@ Res=$(cd ${MAKEFILE_DIR} &&  ${MAKE_BIN_DIR}/make.exe clean)
 if [ $? -ne 0 ]
 then 
 	echo "can't clean"
-   exit 2
+	sed -i 's/..\/TOOLS\/gcc-arm-none-eabi\/bin\/arm-none-eabi/arm-none-eabi/g' ../Debug/makefile
+	exit 2
 fi
 echo "Clean done"
 
@@ -22,6 +23,7 @@ Res=$(cd ${MAKEFILE_DIR} &&  ${MAKE_BIN_DIR}/make.exe all)
 if [ $? -ne 0 ]
 then 
 	echo "Can't make makefile"
+	sed -i 's/..\/TOOLS\/gcc-arm-none-eabi\/bin\/arm-none-eabi/arm-none-eabi/g' ../Debug/makefile
    exit 3
 fi
 # Res=$(${MAKE_BIN_DIR}/make.exe -C ${MAKEFILE_DIR} )
