@@ -5,6 +5,7 @@ MAKEFILE_DIR=../Debug
 
 Update_Makefile()
 {
+#TO CHANGE to grep -rli 
 List=("../Debug/Core/Src/subdir.mk" "../Debug/Core/Startup/subdir.mk" "../Debug/Drivers/STM32H7xx_HAL_Driver/Src/subdir.mk" "../Debug/makefile")
 
 for path in "${List[@]}"; do
