@@ -21,7 +21,7 @@ pipeline {
                     sh'./Doxygen.sh'
                  }
                  echo 'doxygen files generated'
-                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'TOOLS\\Doxygen\\html', reportFiles: '*.html', reportName: 'HTML Report', reportTitles: ''])
+                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '.\\TOOLS\\Doxygen\\html', reportFiles: '*.html', reportName: 'HTML Report', reportTitles: ''])
                 }
             }
         
