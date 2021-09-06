@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Doxyfile=./Doxyconfig
+Doxyfile=./Doxyconfig_linux
 
 Res=$(doxygen $Doxyfile);
 if [ $? -eq 0 ]
