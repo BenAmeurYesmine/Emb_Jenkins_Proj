@@ -1,19 +1,11 @@
 pipeline {
     agent any
 
-    stages {
-	    stage('Flashing') {
-            steps {
-               dir('.\\TOOLS') {
-                    sh' ./flash_target.sh '
-                }
-                echo 'Flashing done'
-            }
-        }
+ 
         stage('Debuging') {
             steps {
                  dir('.\\TOOLS') {
-                    sh'./compile.sh'
+                    sh'python compile.py'
                  }
                  echo 'compilation done'
                
@@ -33,7 +25,15 @@ pipeline {
                 }
             }
         
-    
+    	   stages {
+	    stage('Flashing') {
+            steps {
+               dir('.\\TOOLS') {
+                    sh' ./flash_target.sh '
+                }
+                echo 'Flashing done'
+            }
+        }
 		
         stage('Bringup') {
             steps {
