@@ -2,6 +2,14 @@ pipeline {
     agent any
 
     stages {
+	    stage('Flashing') {
+            steps {
+               dir('.\\TOOLS') {
+                    sh' ./flash_target.sh '
+                }
+                echo 'Flashing done'
+            }
+        }
         stage('Debuging') {
             steps {
                  dir('.\\TOOLS') {
@@ -25,14 +33,7 @@ pipeline {
                 }
             }
         
-        stage('Flashing') {
-            steps {
-               dir('.\\TOOLS') {
-                    sh' ./flash_target.sh '
-                }
-                echo 'Flashing done'
-            }
-        }
+    
 		
         stage('Bringup') {
             steps {
